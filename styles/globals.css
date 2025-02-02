@@ -1,0 +1,147 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+/* Centering Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+/* Card Styling */
+.card {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Headings and Paragraphs */
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Buttons */
+.button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Success Button */
+.upload-btn, .capture-btn {
+  margin-top: 15px;
+  background-color: #28a745;
+  padding: 10px 20px;
+}
+
+.upload-btn:hover, .capture-btn:hover {
+  background-color: #218838;
+}
+
+.upload-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Danger Button */
+.button-red, .recapture-btn {
+  background-color: #f44336;
+}
+
+.button-red:hover, .recapture-btn:hover {
+  background-color: #e53935;
+}
+
+/* Back Button */
+.back-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Image Styles */
+img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.preview-img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Input Styles */
+.input-file, .file-name-input, .file-upload-input {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 80%;
+}
+
+.input-file:focus, .file-name-input:focus, .file-upload-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* File Upload Section */
+.file-upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Select Option */
+.select-option {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Preview Section */
+.preview-section {
+  margin-top: 20px;
+  text-align: center;
+}
