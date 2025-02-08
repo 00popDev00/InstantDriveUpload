@@ -6,6 +6,7 @@ export default function Upload() {
   const [uploadedLink, setUploadedLink] = useState("");
   const [capturedImage, setCapturedImage] = useState(null); // Store captured image
   const [isCamera, setIsCamera] = useState(null); // Store if the user is in camera or file mode
+  const [isFrontCamera, setIsFrontCamera] = useState(false);
   const videoRef = useRef(null); // Reference to the video element
   const canvasRef = useRef(null); // Reference to the canvas element
   const fileInputRef = useRef(null); // Reference to the file input
@@ -14,7 +15,9 @@ export default function Upload() {
   const startCamera = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
-        video: true,
+        video: {
+          facingMode: isFrontCamera ? "user" : "environment", // Default: Back Camera
+        },
       });
       videoRef.current.srcObject = stream;
     } catch (err) {
@@ -94,6 +97,13 @@ export default function Upload() {
     return new Blob([u8arr], { type: mime });
   };
 
+  // Handle toggling of camera
+  useEffect(() => {
+    if (isCamera) {
+      startCamera();
+    }
+  }, [isCamera, isFrontCamera]);
+
   useEffect(() => {
     if (isCamera === true) {
       startCamera();
@@ -138,6 +148,12 @@ export default function Upload() {
               ></video>
               <button onClick={captureImage} className="button capture-btn">
                 Capture Image
+              </button>
+              <button
+                onClick={() => setIsFrontCamera((prev) => !prev)}
+                className="button flip-btn"
+              >
+                Flip Camera
               </button>
               <canvas
                 ref={canvasRef}

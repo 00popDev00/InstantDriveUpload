@@ -13,7 +13,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   padding: 20px;
   background-color: #f8f8f8;
 }
@@ -144,4 +144,18 @@ img {
 .preview-section {
   margin-top: 20px;
   text-align: center;
+}
+
+/* Login screen */
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-bg {
+  background: linear-gradient(270deg, #ff7eb3, #ff758c, #ff7eb3, #ffa585);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
 }
